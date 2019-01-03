@@ -1,0 +1,160 @@
+﻿版本信息
+Microsoft SQL Server JDBC 驱动程序 4.2
+2018 年 2 月
+
+------------
+简介
+------------
+此文件包含最新或其他重要信息，是 Microsoft JDBC  
+Driver 4.2 for SQL Server 文档。在安装 JDBC 驱动程序之前，应 
+通读此文件。
+
+你的反馈对我们非常重要，我们将力求即时对你的反馈 
+做出回复。有关使用 JDBC 驱动程序博客和在线论坛提供反馈的信息，
+请参阅 Microsoft JDBC Driver 4.2 for SQL Server 页面，网址为 http://msdn.microsoft.com/data/jdbc。
+
+
+------------
+安装
+------------
+install.txt 中提供了有关安装 JDBC 驱动程序的说明。 请参阅该文件，了解 
+有关在 Windows 和 Unix 操作系统上安装 JDBC 驱动程序的详细信息。
+
+
+---------------------------
+支持的操作系统
+---------------------------
+Microsoft JDBC Driver 4.2 for SQL Server 支持的操作系统包括：
+  Windows Server 2008 SP2
+  Windows Server 2008 R2 SP1
+  Windows Server 2012
+  Windows Server 2012 R2
+  Windows Vista SP2
+  Windows 7 SP1
+  Windows 8
+  Windows 8.1
+  Windows 10
+  Linux
+  UNIX
+
+上面的列表是某些受支持的操作系统的示例。JDBC 驱动程序 
+可在任何支持使用 Java 虚拟机 (JVM) 的操作系统上工作。但 
+Oracle Solaris (x86)、SUSE Linux 以及 Windows Vista Service Pack 2 或更高版本的操作系统 
+已经过测试。
+
+
+----------------
+版本内容
+----------------
+Microsoft JDBC Driver 4.2 for SQL Server 可执行 zip 或 tar 文件将解压出以下文件 
+在指定位置（相对于选定的安装目录）解包以下文件：
+
+<安装目录>\sqljdbc_<版本>\<语言>\install.txt
+<安装目录>\sqljdbc_<版本>\<语言>\release.txt
+<安装目录>\sqljdbc_<版本>\<语言>\license.txt
+<安装目录>\sqljdbc_<版本>\<语言>\jre7\sqljdbc41.jar
+<安装目录>\sqljdbc_<版本>\<语言>\jre8\sqljdbc42.jar
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x86\sqljdbc_auth.dll
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x64\sqljdbc_auth.dll
+<安装目录>\sqljdbc_<版本>\<语言>\samples\<示例文件...>
+<安装目录>\sqljdbc_<版本>\<语言>\xa\xa_install.sql
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x86\sqljdbc_xa.dll
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x64\sqljdbc_xa.dll
+
+有关每个组件的详细信息，请参阅联机文档 
+Microsoft JDBC Driver for SQL Server 文档：
+https://msdn.microsoft.com/en-us/library/dn197850(v=sql.10).aspx
+
+文档：
+-------------
+此包中包括版本信息、安装说明以及许可条款。
+联机可找到所有其他文档。
+
+请注意，已中止脱机帮助文件。帮助提示：如果需要脱机 
+文档，可直接在 MSDN 中导出文档页 - 只需在 Web 浏览器 
+右上角查找“导出”功能。
+
+
+JAR 文件：
+---------
+为支持后向兼容和可能的升级方案，JDBC Driver 4.2 的每个安装包都包含 
+两个 JAR 文件：sqljdbc41.jar 和 sqljdbc42.jar。 
+
+
+功能特定的文件：
+---------
+集成身份验证（在 Windows 上）组件包含在身份验证目录中。
+
+JDBC 分布式事务组件包含在 xa 目录中。
+
+
+示例：
+-------
+演示 JDBC 驱动程序各种功能的示例应用程序包含在示例
+"sample"目录中。有关每个示例以及如何运行它们的详细信息，请参阅联机 
+文档。
+
+
+-----------
+更改列表
+-----------
+从 4.2.6225.100 到 4.2.8112.100 的更改
+
+在编译器中进行了更改，以缓解 Spectre 和 Meltdown 相关漏洞。
+
+修复了 LOGIN7 数据包不包含驱动程序版本号的问题。
+
+修复了 sqljdbc_xa.dll 中的问题，此前事务可能导致 SQL Server 中句柄泄漏。
+
+
+JDBC 驱动程序现在支持 Java 开发工具包 (JDK) 版本 8，并包含一个新的 jar 文件，
+sqljdbc42.jar，该文件与 JDBC 4.2 API 兼容。
+
+sqljdbc41.jar 已升级，可与 JDBC 4.1 API 兼容。
+
+增强了对回滚 XA 事务的超时设置的控制
+
+更新了在 Azure 中进行重定向时验证 SSL 证书的方式
+
+添加了 serverSpn 连接属性，提升了指定 Kerberos 主体时的灵活性（同时 
+允许当客户端的默认领域与服务器不同时实现跨领域连接）。
+
+新功能：大容量复制 - 应用程序开发人员现在可以在 Java 中编写代码解决方案以快速 
+将大量数据从任何可使用 ResultSet 实例读取的数据源或 
+从 CSV 文件复制到 SQL Server。
+
+
+------------
+已知问题
+------------
+下面是有关 Microsoft JDBC Driver 4.2 for SQL Server 的已知问题：
+
+1) SQL MERGE 语句的参数元数据限制
+
+PreparedStatement.getParameterMetadata() 在与参数化 MERGE 查询一起使用
+时引发 SQLException。
+
+
+2) JavaKerberos 和 IBM VM
+
+如果在 Windows 环境下运行，可能会需要 
+在配置文件中指定 principalname 以便让 Java Kerberos 工作。例如：
+SQLJDBCDriver {
+  com.ibm.security.auth.module.Krb5LoginModule required
+  seDefaultCcache=true
+  credsType=initiator
+  principal=principalname@principaldomain;
+};
+
+
+3) 与 SQL AZURE 的连接被断开
+
+连接到 SQL Azure 时，空闲连接在处于不活动状态一定时间后可能被某个 
+网络组件（如防火墙）终止。若要避免通过网络组件断开空闲连接，
+应在加载驱动程序的操作系统上设定以下注册表 
+设置（或其非 Windows 等效项）：
+           
+注册表设置                                                                                                                                       推荐值
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime            30000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveInterval         1000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\TcpMaxDataRetransmission  10
