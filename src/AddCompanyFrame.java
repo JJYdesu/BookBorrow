@@ -16,6 +16,7 @@ public class AddCompanyFrame {
     private JLabel jl4;
     private JButton b2;
 
+    //添加出版社信息窗口
     public AddCompanyFrame() {
         b1.addActionListener(new ActionListener() {
             @Override

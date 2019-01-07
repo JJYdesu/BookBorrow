@@ -10,6 +10,7 @@ public class StudentMainFrame {
     private JButton b4;
     Boolean c = true ;
 
+    //学生用户主界面
     public StudentMainFrame() {
         JFrame frame = new JFrame("StudentMainFrame");
         frame.add(JP);

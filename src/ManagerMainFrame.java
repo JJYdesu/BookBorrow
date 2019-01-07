@@ -13,6 +13,7 @@ public class ManagerMainFrame {
 
     Boolean b=true;
 
+    //管理员主界面
     public ManagerMainFrame() {
         b1.addActionListener(new ActionListener() {
             @Override
@@ -65,13 +66,5 @@ public class ManagerMainFrame {
         frame.setLocationRelativeTo(null);
         frame.pack();
         frame.setVisible(c);
-    }
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("主界面");
-        frame.setContentPane(new ManagerMainFrame().JP);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.pack();
-        frame.setVisible(true);
     }
 }

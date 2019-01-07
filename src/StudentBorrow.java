@@ -10,6 +10,7 @@ public class StudentBorrow {
     private JTextField t2;
     private JButton b1;
 
+    //学生借书窗口
     public StudentBorrow() {
         b1.addActionListener(new ActionListener() {
             @Override

@@ -14,7 +14,7 @@ public class ManagerLogin {
     private JButton b2;
     Boolean b = true;
 
-
+    //管理员登陆窗口
     public Connection getConnection() throws SQLException, java.lang.ClassNotFoundException {
         String url = "jdbc:sqlserver://localhost;database=bookborrow";
         String user = "sa";

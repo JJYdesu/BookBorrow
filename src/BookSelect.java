@@ -1,9 +1,8 @@
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.sql.*;
-import java.util.Scanner;
 
+//共有权限——查询书籍信息
 public class BookSelect {
     Connection con;
     Statement sql;
@@ -34,18 +33,6 @@ public class BookSelect {
                 String savedate = result.getString("savedate");
                 model.addRow(new Object[]{bno,bname,quantity,com_name,publishdate,she_no,savedate});
             }
-            /*table = new JTable(model){
-                public boolean isCellEditable(int row, int column)
-                {
-                    return false;
-                }
-            };
-            jsp = new JScrollPane(table);
-            jf = new JFrame("按书号查询");
-            jf.add(jsp);
-            jf.setBounds(800, 600, 800, 600);
-            jf.setVisible(true);*/
-
         }catch (java.lang.ClassNotFoundException e){
             System.err.println("ClassNotFoundException: ");
             System.err.println(e.getMessage());

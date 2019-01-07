@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//删除书本信息窗口
 public class DeleteFrame {
     private JTextField t1;
     private JButton b1;

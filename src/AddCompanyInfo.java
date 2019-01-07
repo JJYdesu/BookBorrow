@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//管理员权限——添加出版社信息（包含出版社名称，电话号码，地址，邮编）
 public class AddCompanyInfo {
     Connection con;
     Statement sql;

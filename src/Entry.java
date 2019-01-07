@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//程序进入窗口
 public class Entry {
     private JButton b1;
     private JButton b2;

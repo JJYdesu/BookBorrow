@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//管理员权限——添加学生信息（包含借阅证号，姓名，学号，院系名，专业名，班级号）
 public class AddStudentInfo {
     Connection con;
     Statement sql;

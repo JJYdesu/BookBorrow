@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
+//管理员权限——查询出版社信息
 public class CompanySelect {
     Connection con;
     Statement sql;

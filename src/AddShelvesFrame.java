@@ -14,6 +14,7 @@ public class AddShelvesFrame {
     private JPanel JP;
     private JButton b2;
 
+    //添加书架信息窗口
     public AddShelvesFrame() {
         b1.addActionListener(new ActionListener() {
             @Override

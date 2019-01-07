@@ -22,6 +22,7 @@ public class InsertFrame {
     private JButton b1;
     BookInsert bi = new BookInsert();
 
+    //插入书本信息窗口
     public void Visible(Boolean b) {
         JFrame frame = new JFrame("InsertFrame");
         frame.setContentPane(new InsertFrame().JP);

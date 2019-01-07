@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DBkeshe:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DBkeshe_jar</output-path>
+    <root id="archive" name="DBkeshe.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="DBkeshe" />
+      <element id="extracted-dir" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/SQL Server/7.0.0/sqlserver7-win-auth.jar" path-in-jar="/" />
+      <element id="file-copy" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/SQL Server/7.0.0/sqlserver7-win-auth.jar" />
+    </root>
+  </artifact>
+</component>

@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//学生权限——借书
 public class Borrow {
     Connection con;
     Statement sql;

@@ -19,7 +19,7 @@ public class AddStudentinfoFrame {
     private JLabel jl6;
     private JButton b1;
 
-
+    //添加学生信息窗口
     public AddStudentinfoFrame() {
         b1.addActionListener(new ActionListener() {
             @Override
@@ -67,12 +67,4 @@ public class AddStudentinfoFrame {
         frame.setVisible(b);
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("AddStudentinfoFrame");
-        frame.setContentPane(new AddStudentinfoFrame().JP);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.pack();
-        frame.setVisible(true);
-    }
 }

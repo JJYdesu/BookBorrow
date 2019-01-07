@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.sql.*;
 
+//管理员权限——添加书本信息
 public class BookInsert {
     Connection con;
     Statement sql;

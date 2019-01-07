@@ -1,10 +1,10 @@
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//管理员权限——删除书本信息
 public class BookDelete {
     Connection con;
     Statement sql;

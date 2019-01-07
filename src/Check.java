@@ -1,5 +1,6 @@
 import java.sql.*;
 
+//查重
 public class Check {
     Connection con;
     Statement sql;

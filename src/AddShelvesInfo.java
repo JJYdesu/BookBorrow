@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//管理员权限——添加书架信息（包含书架编号，所在楼层号，存放的书记类型）
 public class AddShelvesInfo {
     Connection con;
     Statement sql;

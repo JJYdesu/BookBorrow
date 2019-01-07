@@ -11,8 +11,7 @@ public class SelectFrame {
     private JTable tb;
     private JScrollPane jsp;
 
-
-
+    //查询书本信息窗口
     public SelectFrame() {
         b1.addActionListener(new ActionListener() {
             @Override
@@ -24,20 +23,12 @@ public class SelectFrame {
                     tb.setModel(bs.SelectName(t1.getText()));
                 if (c1.isSelected()==false&&c2.isSelected()==false)
                     tb.setModel(bs.SelectAll());
-                /*JFrame jf = new JFrame();
-                JOptionPane.showMessageDialog(
-                        jf,
-                        "查询成功",
-                        "消息标题",
-                        JOptionPane.INFORMATION_MESSAGE);*/
-
             }
         });
     }
     public void Visible(boolean b) {
         JFrame frame = new JFrame("SelectFrame");
         frame.setContentPane(new SelectFrame().JP1);
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(b);
