@@ -63,7 +63,7 @@ public class updateLargeData {
               SQLstmt.getResponseBuffering());
           }
 
-          // MainFrame all of the document summaries.
+          // ManagerMainFrame all of the document summaries.
           rs = stmt.executeQuery("SELECT Title, DocumentSummary FROM Production.Document");
 
           // Update each document summary.

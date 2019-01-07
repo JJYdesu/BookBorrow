@@ -1,6 +1,5 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class SelectFrame {
     private JButton b1;
@@ -9,6 +8,9 @@ public class SelectFrame {
     private JPanel JP1;
     private JCheckBox c1;
     private JCheckBox c2;
+    private JTable tb;
+    private JScrollPane jsp;
+
 
 
     public SelectFrame() {
@@ -17,14 +19,21 @@ public class SelectFrame {
             public void actionPerformed(ActionEvent e) {
                 BookSelect bs = new BookSelect();
                 if(c1.isSelected())
-                    bs.SelectNo(t1.getText());
+                    tb.setModel(bs.SelectNo(t1.getText()));
                 if(c2.isSelected())
-                    bs.SelectName(t1.getText());
-                else bs.SelectAll();
+                    tb.setModel(bs.SelectName(t1.getText()));
+                if (c1.isSelected()==false&&c2.isSelected()==false)
+                    tb.setModel(bs.SelectAll());
+                /*JFrame jf = new JFrame();
+                JOptionPane.showMessageDialog(
+                        jf,
+                        "查询成功",
+                        "消息标题",
+                        JOptionPane.INFORMATION_MESSAGE);*/
+
             }
         });
     }
-
     public void Visible(boolean b) {
         JFrame frame = new JFrame("SelectFrame");
         frame.setContentPane(new SelectFrame().JP1);

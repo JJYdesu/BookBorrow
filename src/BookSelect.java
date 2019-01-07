@@ -8,9 +8,7 @@ public class BookSelect {
     Connection con;
     Statement sql;
     DefaultTableModel model=new DefaultTableModel();
-    JTable table;
-    JScrollPane jsp;
-    JFrame jf;
+
     public Connection getConnection()throws SQLException,java.lang.ClassNotFoundException {
         String url ="jdbc:sqlserver://localhost;database=bookborrow";
         String user = "sa";
@@ -58,7 +56,7 @@ public class BookSelect {
         return model;
     }
     //按书名查询
-    public void SelectName(String selectbname){
+    public TableModel SelectName(String selectbname){
         try {
             con = getConnection();
             sql = con.createStatement();
@@ -75,23 +73,13 @@ public class BookSelect {
                 String savedate = result.getString("savedate");
                 model.addRow(new Object[]{bno,bname,quantity,com_name,publishdate,she_no,savedate});
             }
-            table = new JTable(model){
-                public boolean isCellEditable(int row, int column)
-                {
-                    return false;
-                }
-            };
-            jsp = new JScrollPane(table);
-            jf = new JFrame("按书名查询");
-            jf.add(jsp);
-            jf.setBounds(800, 600, 800, 600);
-            jf.setVisible(true);
         }catch (java.lang.ClassNotFoundException e){
             System.err.println("ClassNotFoundException: ");
             System.err.println(e.getMessage());
         }catch (SQLException ex){
             System.err.println("SQLException: "+ex.getMessage());
         }
+        return model;
     }
     //查询全部
     public TableModel SelectAll(){
@@ -110,22 +98,7 @@ public class BookSelect {
                 String she_no = result.getString("she_no");
                 String savedate = result.getString("savedate");
                 model.addRow(new Object[]{bno,bname,quantity,com_name,publishdate,she_no,savedate});
-
-
             }
-
-            /*table = new JTable(model){
-                public boolean isCellEditable(int row, int column)
-                {
-                    return false;
-                }
-            };
-            jsp = new JScrollPane(table);
-            jf = new JFrame("全部书籍");
-            jf.add(jsp);
-            jf.setLocationRelativeTo(null);
-            jf.setSize(800, 600);
-            jf.setVisible(true);*/
         }catch (java.lang.ClassNotFoundException e){
             System.err.println("ClassNotFoundException: ");
             System.err.println(e.getMessage());

@@ -21,7 +21,7 @@ public class test {
                 m = sc.nextInt();
                 switch (m) {
                     case 1:
-                        String select = "select * from book where bno = '00001'";
+                        String select = "select * from book";
                         ResultSet result =sql.executeQuery(select);
                         System.out.println("图书编号 " + "    图书名 " + "           数量");
                         System.out.println("---------------------------------");
